@@ -11,8 +11,8 @@ add_library(modern_library lib.cpp ${HEADER_LIST})
 # We need this directory, and users of our library will need it too
 target_include_directories(modern_library PUBLIC ../include)
 
-# This depends on (header only) boost
-# target_link_libraries(modern_library PRIVATE Boost::boost)
+# This depends on fmt
+target_link_libraries(modern_library PRIVATE fmt::fmt)
 
 # All users of this library will need at least C++11
 target_compile_features(modern_library PUBLIC cxx_std_11)
